@@ -284,8 +284,17 @@ function termLog(msg, color='text-gray-300') {
 async function termSend(action, payload) {
     termLog(`> ${action} ${JSON.stringify(payload)}`, 'text-brand-blue');
     try {
-        // TODO: wire to actual OCPP command sender
-        termLog(`  (command queued — wire to OCPP Core command API)`, 'text-yellow-400');
+        const res = await fetch('/action/command/' + encodeURIComponent(cpId), {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({action: action, payload: payload}),
+        });
+        const data = await res.json();
+        if (data.msg_id) {
+            termLog('  sent ' + data.msg_id, 'text-green-400');
+        } else {
+            termLog('  ' + (data.detail || data.error || JSON.stringify(data)), 'text-yellow-400');
+        }
     } catch(e) { termLog(`  Error: ${e}`, 'text-red-400'); }
 }
 
