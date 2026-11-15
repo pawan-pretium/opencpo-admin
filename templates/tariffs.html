@@ -157,23 +157,23 @@
                 <div class="space-y-3 text-sm">
                     <div class="flex justify-between">
                         <span class="text-gray-400">Energy Cost</span>
-                        <span id="result-energy" class="font-mono text-gray-100">£0,00</span>
+                        <span id="result-energy" class="font-mono text-gray-100">£0.00</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-400">Time Rate</span>
-                        <span id="result-time" class="font-mono text-gray-100">£0,00</span>
+                        <span id="result-time" class="font-mono text-gray-100">£0.00</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-400">Idle Rate</span>
-                        <span id="result-idle" class="font-mono text-gray-100">£0,00</span>
+                        <span id="result-idle" class="font-mono text-gray-100">£0.00</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-400">Flat Fee</span>
-                        <span id="result-flat" class="font-mono text-gray-100">£0,00</span>
+                        <span id="result-flat" class="font-mono text-gray-100">£0.00</span>
                     </div>
                     <div class="flex justify-between pt-3 border-t border-gray-700">
                         <span class="font-bold text-gray-200">Total</span>
-                        <span id="result-total" class="font-mono font-bold text-brand-green text-lg">£0,00</span>
+                        <span id="result-total" class="font-mono font-bold text-brand-green text-lg">£0.00</span>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 border-t border-gray-700 text-xs text-gray-500" id="calc-details"></div>
@@ -475,7 +475,7 @@ function margeUpdate() {
     document.getElementById('marge-result').className = `font-mono font-bold text-lg ${color}`;
     document.getElementById('marge-result').textContent = fmtEur(marge) + '/kWh';
     document.getElementById('marge-sessie').textContent = fmtEur(margePerSessie);
-    document.getElementById('marge-pct').textContent = pct.toFixed(1).replace('.', ',') + '%';
+    document.getElementById('marge-pct').textContent = pct.toFixed(1) + '%';
 }
 
 // Init on load
