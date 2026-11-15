@@ -11,7 +11,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { dark: '#0C2340', green: '#84BD00', blue: '#00B0E4' }
+                        brand: { dark: '#1A1A1A', green: '#204020', blue: '#204020' }
                     },
                     fontSize: {
                         'xs': ['13px', '18px'],
@@ -24,34 +24,37 @@
         }
     </script>
     <style>
-        body { background: #050b14; }
+        @font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("/static/fonts/open-sans-400.ttf") format("truetype"); }
+        @font-face { font-family: "Open Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("/static/fonts/open-sans-600.ttf") format("truetype"); }
+        @font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("/static/fonts/open-sans-700.ttf") format("truetype"); }
+        body { background: #FFFFFF; color: #1A1A1A; font-family: "Open Sans", sans-serif; }
 
         .login-card {
-            background: #0a1221;
-            border: 1px solid #15283f;
+            background: #FFFFFF;
+            border: 1px solid rgba(26, 26, 26, 0.12);
             border-radius: 12px;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 24px rgba(26, 26, 26, 0.08);
         }
 
         .input-field {
-            background: #060d19;
-            border: 1px solid #1e3452;
+            background: #FFFFFF;
+            border: 1px solid rgba(26, 26, 26, 0.12);
             border-radius: 7px;
-            color: #e8edf2;
+            color: #1A1A1A;
             font-size: 15px;
             padding: 11px 14px;
             width: 100%;
             outline: none;
             transition: border-color 0.15s, box-shadow 0.15s;
         }
-        .input-field::placeholder { color: #3d5870; }
+        .input-field::placeholder { color: rgba(26, 26, 26, 0.62); }
         .input-field:focus {
-            border-color: #00B0E4;
-            box-shadow: 0 0 0 3px rgba(0,176,228,0.12);
+            border-color: #204020;
+            box-shadow: 0 0 0 3px rgba(32, 64, 32,0.12);
         }
 
         .btn-login {
-            background: #00B0E4;
+            background: #204020;
             color: #fff;
             border: none;
             border-radius: 7px;
@@ -64,12 +67,12 @@
             transition: background 0.15s, box-shadow 0.15s;
         }
         .btn-login:hover {
-            background: #00c4ff;
-            box-shadow: 0 4px 16px rgba(0,176,228,0.3);
+            background: #204020;
+            box-shadow: 0 4px 16px rgba(32, 64, 32,0.3);
         }
-        .btn-login:active { background: #0099cc; }
+        .btn-login:active { background: #204020; }
 
-        label { font-size: 13px; color: #6b8299; letter-spacing: 0.3px; }
+        label { font-size: 13px; color: rgba(26, 26, 26, 0.62); letter-spacing: 0.3px; }
     </style>
 </head>
 <body class="h-full flex flex-col items-center justify-center" style="min-height:100vh;">
@@ -77,9 +80,9 @@
     <!-- Logo bar at top -->
     <div style="margin-bottom:36px;text-align:center;">
         <div style="font-size:32px;font-weight:700;letter-spacing:-0.5px;line-height:1;">
-            <span style="color:#e8edf2;">Open</span><span style="color:#4a6580;">CPO</span>
+            <span style="color:#1A1A1A;">Open</span><span style="color:rgba(26, 26, 26, 0.62);">CPO</span>
         </div>
-        <div style="font-size:10px;color:#3d5870;letter-spacing:2.5px;text-transform:uppercase;margin-top:8px;">
+        <div style="font-size:10px;color:rgba(26, 26, 26, 0.62);letter-spacing:2.5px;text-transform:uppercase;margin-top:8px;">
             Admin Panel
         </div>
     </div>
@@ -87,11 +90,11 @@
     <!-- Login card -->
     <div class="login-card" style="width:100%;max-width:380px;padding:36px 32px;">
 
-        <h1 style="font-size:17px;font-weight:600;color:#e8edf2;margin-bottom:24px;">Sign in</h1>
+        <h1 style="font-size:17px;font-weight:600;color:#1A1A1A;margin-bottom:24px;">Sign in</h1>
 
         <!-- Error message -->
         {% if error %}
-        <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#f87171;">
+        <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#b91c1c;">
             {{ error }}
         </div>
         {% endif %}
@@ -129,8 +132,8 @@
     </div>
 
     <!-- Footer -->
-    <div style="margin-top:32px;font-size:12px;color:#2d4a63;text-align:center;">
-        Powered by <span style="color:#3d5870;">OpenCPO</span>
+    <div style="margin-top:32px;font-size:12px;color:rgba(26, 26, 26, 0.62);text-align:center;">
+        Powered by <span style="color:rgba(26, 26, 26, 0.62);">OpenCPO</span>
     </div>
 
 </body>

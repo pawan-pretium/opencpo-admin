@@ -16,47 +16,47 @@
   <div class="docs-diagram-label">Authorization Flow — Driver Taps Card</div>
   <svg viewBox="0 0 720 160" style="width:100%;display:block;max-width:720px;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <marker id="rf-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#2d5a8a"/></marker>
-      <marker id="rf-arr-g" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#84BD00"/></marker>
+      <marker id="rf-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="rgba(26, 26, 26, 0.35)"/></marker>
+      <marker id="rf-arr-g" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#204020"/></marker>
       <marker id="rf-arr-r" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#ef4444"/></marker>
     </defs>
 
     <!-- Nodes -->
-    <rect x="10"  y="50" width="100" height="44" rx="8" fill="#0d2137" stroke="#84BD00" stroke-opacity="0.5"/>
-    <text x="60"  y="69" text-anchor="middle" font-size="8" fill="#84BD00" font-weight="600">RFID Card</text>
-    <text x="60"  y="82" text-anchor="middle" font-size="7" fill="#3d5870">NFC tap</text>
+    <rect x="10"  y="50" width="100" height="44" rx="8" fill="#FFFFFF" stroke="#204020" stroke-opacity="0.5"/>
+    <text x="60"  y="69" text-anchor="middle" font-size="8" fill="#204020" font-weight="600">RFID Card</text>
+    <text x="60"  y="82" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">NFC tap</text>
 
-    <rect x="180" y="50" width="120" height="44" rx="8" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="240" y="66" text-anchor="middle" font-size="8" fill="#c0cdd8" font-weight="600">Charger</text>
-    <text x="240" y="78" text-anchor="middle" font-size="7" fill="#3d5870">OCPP 1.6j / 2.0.1</text>
-    <text x="240" y="88" text-anchor="middle" font-size="7" fill="#3d5870">reads UID</text>
+    <rect x="180" y="50" width="120" height="44" rx="8" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="240" y="66" text-anchor="middle" font-size="8" fill="#1A1A1A" font-weight="600">Charger</text>
+    <text x="240" y="78" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">OCPP 1.6j / 2.0.1</text>
+    <text x="240" y="88" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">reads UID</text>
 
-    <rect x="390" y="30" width="140" height="90" rx="8" fill="#071828" stroke="#00B0E4" stroke-opacity="0.5"/>
-    <text x="460" y="52"  text-anchor="middle" font-size="8" fill="#00B0E4" font-weight="600">OpenCPO Core</text>
-    <text x="460" y="66"  text-anchor="middle" font-size="7" fill="#3d5870">1. Check token table</text>
-    <text x="460" y="78"  text-anchor="middle" font-size="7" fill="#3d5870">2. Check group status</text>
-    <text x="460" y="90"  text-anchor="middle" font-size="7" fill="#3d5870">3. Check OCPI whitelist</text>
-    <text x="460" y="102" text-anchor="middle" font-size="7" fill="#3d5870">4. Return verdict</text>
+    <rect x="390" y="30" width="140" height="90" rx="8" fill="#FFFFFF" stroke="#204020" stroke-opacity="0.5"/>
+    <text x="460" y="52"  text-anchor="middle" font-size="8" fill="#204020" font-weight="600">OpenCPO Core</text>
+    <text x="460" y="66"  text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">1. Check token table</text>
+    <text x="460" y="78"  text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">2. Check group status</text>
+    <text x="460" y="90"  text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">3. Check OCPI whitelist</text>
+    <text x="460" y="102" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">4. Return verdict</text>
 
-    <rect x="600" y="38" width="110" height="32" rx="6" fill="#0d2137" stroke="#84BD00" stroke-opacity="0.4"/>
-    <text x="655" y="52" text-anchor="middle" font-size="8" fill="#84BD00">Accepted</text>
-    <text x="655" y="63" text-anchor="middle" font-size="7" fill="#3d5870">session starts</text>
+    <rect x="600" y="38" width="110" height="32" rx="6" fill="#FFFFFF" stroke="#204020" stroke-opacity="0.4"/>
+    <text x="655" y="52" text-anchor="middle" font-size="8" fill="#204020">Accepted</text>
+    <text x="655" y="63" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">session starts</text>
 
-    <rect x="600" y="86" width="110" height="32" rx="6" fill="#0d2137" stroke="#ef4444" stroke-opacity="0.4"/>
+    <rect x="600" y="86" width="110" height="32" rx="6" fill="#FFFFFF" stroke="#ef4444" stroke-opacity="0.4"/>
     <text x="655" y="100" text-anchor="middle" font-size="8" fill="#ef4444">Rejected</text>
-    <text x="655" y="111" text-anchor="middle" font-size="7" fill="#3d5870">blocked / unknown</text>
+    <text x="655" y="111" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">blocked / unknown</text>
 
     <!-- Arrows -->
-    <line x1="111" y1="72" x2="179" y2="72" stroke="#84BD00" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#rf-arr-g)"/>
-    <text x="145" y="67" text-anchor="middle" font-size="7" fill="#3d5870">NFC</text>
+    <line x1="111" y1="72" x2="179" y2="72" stroke="#204020" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#rf-arr-g)"/>
+    <text x="145" y="67" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">NFC</text>
 
-    <line x1="301" y1="72" x2="388" y2="72" stroke="#2d5a8a" stroke-width="1.5" marker-end="url(#rf-arr)"/>
-    <text x="345" y="67" text-anchor="middle" font-size="7" fill="#3d5870">OCPP Authorize(UID)</text>
+    <line x1="301" y1="72" x2="388" y2="72" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#rf-arr)"/>
+    <text x="345" y="67" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">OCPP Authorize(UID)</text>
 
-    <line x1="531" y1="62" x2="598" y2="56" stroke="#84BD00" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#rf-arr-g)"/>
+    <line x1="531" y1="62" x2="598" y2="56" stroke="#204020" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#rf-arr-g)"/>
     <line x1="531" y1="95" x2="598" y2="100" stroke="#ef4444" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#rf-arr-r)"/>
 
-    <text x="240" y="130" text-anchor="middle" font-size="7" fill="#2d4a63">Typical roundtrip: 50–200ms  ·  charger displays result immediately</text>
+    <text x="240" y="130" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">Typical roundtrip: 50–200ms  ·  charger displays result immediately</text>
   </svg>
 </div>
 
@@ -64,7 +64,7 @@
 <p>An RFID token is a physical NFC card — identical in form factor to a contactless bank card or hotel key. The driver holds it near the charger's NFC reader (typically the illuminated panel on the front). The reader reads the card's UID (Unique Identifier) in milliseconds and sends it to OpenCPO for authorization.</p>
 <p>Most EV charging cards use <strong>ISO 14443A</strong> — the same standard used by Mifare Classic, Mifare Desfire, and NXP cards. The UID is either 4 bytes (single-size, most common) or 7 bytes (double-size, used in newer cards), encoded as hexadecimal: <code>04:A3:B7:22</code> or <code>04:A3:B7:22:C1:09:80</code>.</p>
 
-<div class="docs-callout" style="border-color:#84BD00;background:rgba(132,189,0,0.04);">
+<div class="docs-callout" style="border-color:#204020;background:rgba(132,189,0,0.04);">
   <strong>Finding the UID:</strong> It's printed on the back of most charging cards. If not, use the Admin → RFID Tokens → Scan page — tap the card on any online charger and OpenCPO captures the UID from the OCPP Authorize request. No separate card reader needed.
 </div>
 
@@ -88,11 +88,11 @@
 <h3 class="docs-h3">Adding Tokens</h3>
 <div class="docs-two-col">
   <div>
-    <strong style="color:#c0cdd8;display:block;margin-bottom:6px;">Manual Entry</strong>
+    <strong style="color:#1A1A1A;display:block;margin-bottom:6px;">Manual Entry</strong>
     <p>Admin → RFID Tokens → Add Token. Enter the UID, assign a label (driver name or fleet ID), select a token group, and set the status to Active. The token is immediately available for authorization.</p>
   </div>
   <div>
-    <strong style="color:#c0cdd8;display:block;margin-bottom:6px;">Bulk Import</strong>
+    <strong style="color:#1A1A1A;display:block;margin-bottom:6px;">Bulk Import</strong>
     <p>Upload a CSV with columns <code>uid, label, group_id, status</code>. OpenCPO validates all UIDs, reports duplicates, and imports the rest atomically. Use this when onboarding a fleet of 50+ drivers — preparing the CSV takes minutes, the import is instant.</p>
   </div>
 </div>
@@ -109,10 +109,10 @@ uid,label,group_id,status
   <table class="docs-table">
     <thead><tr><th>Status</th><th>Authorization result</th><th>When to use</th></tr></thead>
     <tbody>
-      <tr><td><span style="color:#84BD00;font-weight:600;">Active</span></td><td>Accepted</td><td>Normal in-use tokens. Driver can start sessions.</td></tr>
+      <tr><td><span style="color:#204020;font-weight:600;">Active</span></td><td>Accepted</td><td>Normal in-use tokens. Driver can start sessions.</td></tr>
       <tr><td><span style="color:#ef4444;font-weight:600;">Blocked</span></td><td>Blocked</td><td>Temporarily suspended — debt, investigation, card reported lost but not yet replaced. Charger displays "Card blocked" to the driver.</td></tr>
       <tr><td><span style="color:#f59e0b;font-weight:600;">Expired</span></td><td>Expired</td><td>Set automatically when a token's expiry date passes. Use for contract-limited access (e.g., employee access only during employment period). Charger displays "Card expired".</td></tr>
-      <tr><td><span style="color:#3d5870;font-weight:600;">Invalid</span></td><td>Invalid</td><td>Unknown UID — no record in system. This is the default for any unrecognized card tap. Displayed as "Card not recognized".</td></tr>
+      <tr><td><span style="color:rgba(26, 26, 26, 0.62);font-weight:600;">Invalid</span></td><td>Invalid</td><td>Unknown UID — no record in system. This is the default for any unrecognized card tap. Displayed as "Card not recognized".</td></tr>
     </tbody>
   </table>
 </div>
@@ -131,12 +131,12 @@ uid,label,group_id,status
 <h3 class="docs-h3">Whitelist vs Online Authorization</h3>
 <div class="docs-two-col">
   <div>
-    <strong style="color:#c0cdd8;display:block;margin-bottom:6px;">Online Authorization</strong>
+    <strong style="color:#1A1A1A;display:block;margin-bottom:6px;">Online Authorization</strong>
     <p>Default mode. Every tap triggers an OCPP <code>Authorize</code> request to OpenCPO. Core checks the token status in real time and returns the verdict. Requires a stable network connection between charger and server. Latency: 50–200ms from tap to charger response.</p>
     <p><strong>Use when:</strong> You need immediate revocation capability (e.g., shared fleet where cards get lost frequently).</p>
   </div>
   <div>
-    <strong style="color:#c0cdd8;display:block;margin-bottom:6px;">Local Whitelist</strong>
+    <strong style="color:#1A1A1A;display:block;margin-bottom:6px;">Local Whitelist</strong>
     <p>OpenCPO pushes the full authorized token list to the charger's local storage. The charger authorizes taps offline without contacting the server. Sessions start immediately even during a server outage or network interruption.</p>
     <p><strong>Use when:</strong> Network reliability is uncertain (remote sites, cellular-connected chargers) or you need sub-50ms authorization. <em>Limitation:</em> Revocation takes up to the next sync interval (typically 15 minutes) to propagate.</p>
   </div>
@@ -299,7 +299,7 @@ curl https://api.your-opencpo.com/ocpi/2.2.1/locations \
 </div>
 
 <div class="docs-callout">
-  Full interactive API documentation with request/response schemas, authentication sandbox, and code examples is available at <a href="{{ core_api_public_url }}/docs" style="color:#00B0E4;" target="_blank">{{ core_api_public_url|replace('https://', '') }}/docs</a> — powered by OpenAPI 3.1.
+  Full interactive API documentation with request/response schemas, authentication sandbox, and code examples is available at <a href="{{ core_api_public_url }}/docs" style="color:#204020;" target="_blank">{{ core_api_public_url|replace('https://', '') }}/docs</a> — powered by OpenAPI 3.1.
 </div>
 
 <h3 class="docs-h3">Webhooks</h3>

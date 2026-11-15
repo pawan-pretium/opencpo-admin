@@ -6,11 +6,11 @@
 
 <div style="margin-bottom:20px;">
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
-    <a href="/ocpi" style="color:#3d5870;font-size:13px;text-decoration:none;">OCPI Roaming</a>
-    <span style="color:#3d5870;">›</span>
-    <h1 style="font-size:22px;font-weight:700;color:#e8edf2;margin:0;">Request Log</h1>
+    <a href="/ocpi" style="color:rgba(26, 26, 26, 0.62);font-size:13px;text-decoration:none;">OCPI Roaming</a>
+    <span style="color:rgba(26, 26, 26, 0.62);">›</span>
+    <h1 style="font-size:22px;font-weight:700;color:#1A1A1A;margin:0;">Request Log</h1>
   </div>
-  <p style="color:#4a6580;font-size:13px;max-width:760px;">
+  <p style="color:rgba(26, 26, 26, 0.62);font-size:13px;max-width:760px;">
     Every HTTP request made between your system and a roaming partner — both inbound (they called you)
     and outbound (you called them). Use this to diagnose authentication failures, missing data, or
     unexpected responses.
@@ -19,18 +19,18 @@
 
 {# ── Note if log table not ready ──────────────────────────────────────── #}
 {% if log_note %}
-<div style="background:#111c2e;border:1px solid #1e3450;border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#6b8299;">
+<div style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:rgba(26, 26, 26, 0.62);">
   {{ log_note }}
 </div>
 {% endif %}
 
 {# ── Filters ──────────────────────────────────────────────────────────── #}
-<div style="background:#0a1221;border:1px solid #15283f;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+<div style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);border-radius:10px;padding:14px 16px;margin-bottom:12px;">
   <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;">
     <div style="display:flex;flex-direction:column;gap:4px;min-width:160px;">
-      <label style="font-size:10px;color:#3d5870;text-transform:uppercase;letter-spacing:1px;">Partner</label>
+      <label style="font-size:10px;color:rgba(26, 26, 26, 0.62);text-transform:uppercase;letter-spacing:1px;">Partner</label>
       <select id="filter-partner" onchange="applyFilters()"
-        style="background:#111c2e;border:1px solid #1e3450;color:#c0cdd8;padding:6px 10px;border-radius:6px;font-size:12px;">
+        style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);color:#1A1A1A;padding:6px 10px;border-radius:6px;font-size:12px;">
         <option value="">All partners</option>
         {% for p in partners %}
         <option value="{{ p.id }}" {% if selected_partner == p.id %}selected{% endif %}>{{ p.name }}</option>
@@ -38,18 +38,18 @@
       </select>
     </div>
     <div style="display:flex;flex-direction:column;gap:4px;min-width:140px;">
-      <label style="font-size:10px;color:#3d5870;text-transform:uppercase;letter-spacing:1px;">Direction</label>
+      <label style="font-size:10px;color:rgba(26, 26, 26, 0.62);text-transform:uppercase;letter-spacing:1px;">Direction</label>
       <select id="filter-dir" onchange="applyFilters()"
-        style="background:#111c2e;border:1px solid #1e3450;color:#c0cdd8;padding:6px 10px;border-radius:6px;font-size:12px;">
+        style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);color:#1A1A1A;padding:6px 10px;border-radius:6px;font-size:12px;">
         <option value="">All</option>
         <option value="inbound">Inbound (they called us)</option>
         <option value="outbound">Outbound (we called them)</option>
       </select>
     </div>
     <div style="display:flex;flex-direction:column;gap:4px;min-width:140px;">
-      <label style="font-size:10px;color:#3d5870;text-transform:uppercase;letter-spacing:1px;">Module</label>
+      <label style="font-size:10px;color:rgba(26, 26, 26, 0.62);text-transform:uppercase;letter-spacing:1px;">Module</label>
       <select id="filter-module" onchange="applyFilters()"
-        style="background:#111c2e;border:1px solid #1e3450;color:#c0cdd8;padding:6px 10px;border-radius:6px;font-size:12px;">
+        style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);color:#1A1A1A;padding:6px 10px;border-radius:6px;font-size:12px;">
         <option value="">All modules</option>
         <option value="credentials">Credentials</option>
         <option value="locations">Locations</option>
@@ -60,23 +60,23 @@
       </select>
     </div>
     <div style="display:flex;flex-direction:column;gap:4px;flex:1;min-width:200px;">
-      <label style="font-size:10px;color:#3d5870;text-transform:uppercase;letter-spacing:1px;">Search</label>
+      <label style="font-size:10px;color:rgba(26, 26, 26, 0.62);text-transform:uppercase;letter-spacing:1px;">Search</label>
       <input id="filter-search" type="text" placeholder="Search URL, status, body…" oninput="applyFilters()"
-        style="background:#111c2e;border:1px solid #1e3450;color:#c0cdd8;padding:6px 10px;border-radius:6px;font-size:12px;width:100%;">
+        style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);color:#1A1A1A;padding:6px 10px;border-radius:6px;font-size:12px;width:100%;">
     </div>
     <div style="display:flex;gap:8px;align-items:flex-end;">
-      <span id="row-counter" style="font-size:12px;color:#4a6580;padding:6px 0;"></span>
+      <span id="row-counter" style="font-size:12px;color:rgba(26, 26, 26, 0.62);padding:6px 0;"></span>
     </div>
   </div>
 </div>
 
 {# ── Log table ─────────────────────────────────────────────────────────── #}
-<div style="background:#060d18;border:1px solid #15283f;border-radius:10px;overflow:hidden;">
+<div style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);border-radius:10px;overflow:hidden;">
   {% if entries %}
   <div style="overflow-x:auto;">
     <table style="width:100%;border-collapse:collapse;font-size:12px;font-family:'SF Mono','Fira Code',monospace;">
       <thead>
-        <tr style="border-bottom:1px solid #15283f;color:#3d5870;font-size:10px;text-transform:uppercase;letter-spacing:1px;">
+        <tr style="border-bottom:1px solid rgba(26, 26, 26, 0.12);color:rgba(26, 26, 26, 0.62);font-size:10px;text-transform:uppercase;letter-spacing:1px;">
           <th style="text-align:left;padding:8px 12px;white-space:nowrap;">Time</th>
           <th style="text-align:left;padding:8px 12px;">Dir</th>
           <th style="text-align:left;padding:8px 12px;">Module</th>
@@ -91,59 +91,59 @@
       <tbody id="log-body">
         {% for e in entries %}
         <tr class="log-row"
-          style="border-bottom:1px solid #0d1b2e;cursor:pointer;"
+          style="border-bottom:1px solid rgba(26, 26, 26, 0.12);cursor:pointer;"
           data-dir="{{ e.get('direction','') }}"
           data-module="{{ e.get('module','') }}"
           data-partner="{{ e.get('partner_id','') }}"
           onclick="showDetail({{ loop.index0 }})"
-          onmouseover="this.style.background='#0d1b2e'" onmouseout="this.style.background=''">
-          <td style="padding:6px 12px;color:#2d4a63;white-space:nowrap;">
+          onmouseover="this.style.background='rgba(26, 26, 26, 0.12)'" onmouseout="this.style.background=''">
+          <td style="padding:6px 12px;color:rgba(26, 26, 26, 0.62);white-space:nowrap;">
             {{ (e.get("created_at") or "")[:19].replace("T"," ") }}
           </td>
           <td style="padding:6px 12px;">
             {% if e.get("direction") == "inbound" %}
-              <span style="color:#84BD00;font-size:10px;">IN</span>
+              <span style="color:#204020;font-size:10px;">IN</span>
             {% else %}
-              <span style="color:#00B0E4;font-size:10px;">OUT</span>
+              <span style="color:#204020;font-size:10px;">OUT</span>
             {% endif %}
           </td>
-          <td style="padding:6px 12px;color:#6b8299;">{{ e.get("module","—") }}</td>
-          <td style="padding:6px 12px;color:#fbbf24;font-size:10px;">{{ e.get("method","GET") }}</td>
-          <td style="padding:6px 12px;color:#4a6580;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+          <td style="padding:6px 12px;color:rgba(26, 26, 26, 0.62);">{{ e.get("module","—") }}</td>
+          <td style="padding:6px 12px;color:#a16207;font-size:10px;">{{ e.get("method","GET") }}</td>
+          <td style="padding:6px 12px;color:rgba(26, 26, 26, 0.62);max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
             {{ e.get("url") or e.get("path","—") }}
           </td>
           <td style="padding:6px 12px;">
             {% set http_code = e.get("http_status", 0)|int %}
             {% if http_code >= 200 and http_code < 300 %}
-              <span style="color:#84BD00;">{{ http_code }}</span>
+              <span style="color:#204020;">{{ http_code }}</span>
             {% elif http_code >= 400 %}
               <span style="color:#ef4444;">{{ http_code }}</span>
             {% else %}
-              <span style="color:#6b8299;">{{ http_code or "—" }}</span>
+              <span style="color:rgba(26, 26, 26, 0.62);">{{ http_code or "—" }}</span>
             {% endif %}
           </td>
           <td style="padding:6px 12px;">
             {% set ocpi_code = e.get("ocpi_status_code", 0)|int %}
             {% if ocpi_code == 1000 %}
-              <span style="color:#84BD00;">{{ ocpi_code }}</span>
+              <span style="color:#204020;">{{ ocpi_code }}</span>
             {% elif ocpi_code > 1000 %}
               <span style="color:#f97316;">{{ ocpi_code }}</span>
             {% else %}
-              <span style="color:#4a6580;">—</span>
+              <span style="color:rgba(26, 26, 26, 0.62);">—</span>
             {% endif %}
           </td>
-          <td style="padding:6px 12px;color:#4a6580;">{{ e.get("partner_name","—") }}</td>
-          <td style="padding:6px 12px;text-align:right;color:#3d5870;">{{ e.get("elapsed_ms","—") }}</td>
+          <td style="padding:6px 12px;color:rgba(26, 26, 26, 0.62);">{{ e.get("partner_name","—") }}</td>
+          <td style="padding:6px 12px;text-align:right;color:rgba(26, 26, 26, 0.62);">{{ e.get("elapsed_ms","—") }}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
   {% else %}
-  <div style="padding:48px;text-align:center;color:#2d4a63;font-size:13px;font-family:sans-serif;">
+  <div style="padding:48px;text-align:center;color:rgba(26, 26, 26, 0.62);font-size:13px;font-family:sans-serif;">
     No log entries yet.
     <br><br>
-    <span style="font-size:12px;line-height:1.7;color:#1e3450;">
+    <span style="font-size:12px;line-height:1.7;color:rgba(26, 26, 26, 0.12);">
       OCPI requests will appear here once a roaming partner connects,
       or once your system makes outbound calls during a sync.
     </span>
@@ -154,24 +154,24 @@
 {# ── Detail panel ─────────────────────────────────────────────────────── #}
 <div id="detail-panel"
   style="display:none;position:fixed;top:48px;right:16px;width:500px;max-height:calc(100vh - 64px);
-         background:#0a1221;border:1px solid #1e3450;border-radius:10px;
+         background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);border-radius:10px;
          box-shadow:0 8px 32px rgba(0,0,0,0.6);z-index:1000;display:flex;flex-direction:column;">
-  <div style="padding:12px 16px;border-bottom:1px solid #15283f;display:flex;justify-content:space-between;align-items:center;">
-    <span id="detail-title" style="font-size:13px;font-weight:600;color:#e8edf2;"></span>
+  <div style="padding:12px 16px;border-bottom:1px solid rgba(26, 26, 26, 0.12);display:flex;justify-content:space-between;align-items:center;">
+    <span id="detail-title" style="font-size:13px;font-weight:600;color:#1A1A1A;"></span>
     <div style="display:flex;gap:6px;">
       <button onclick="copyDetail()"
-        style="padding:3px 10px;background:#111c2e;border:1px solid #1e3450;color:#00B0E4;border-radius:4px;font-size:11px;cursor:pointer;">
+        style="padding:3px 10px;background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);color:#204020;border-radius:4px;font-size:11px;cursor:pointer;">
         Copy
       </button>
       <button onclick="closeDetail()"
-        style="padding:3px 8px;background:#111c2e;border:1px solid #1e3450;color:#6b8299;border-radius:4px;font-size:11px;cursor:pointer;">
+        style="padding:3px 8px;background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);color:rgba(26, 26, 26, 0.62);border-radius:4px;font-size:11px;cursor:pointer;">
         Close
       </button>
     </div>
   </div>
   <div style="flex:1;overflow-y:auto;padding:14px 16px;">
     <pre id="detail-json"
-      style="margin:0;font-size:11px;line-height:1.6;white-space:pre-wrap;word-break:break-all;color:#c0cdd8;font-family:'SF Mono','Fira Code',monospace;"></pre>
+      style="margin:0;font-size:11px;line-height:1.6;white-space:pre-wrap;word-break:break-all;color:#1A1A1A;font-family:'SF Mono','Fira Code',monospace;"></pre>
   </div>
 </div>
 <div id="detail-backdrop" onclick="closeDetail()"

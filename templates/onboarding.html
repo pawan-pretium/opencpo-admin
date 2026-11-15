@@ -12,30 +12,30 @@
       theme: {
         extend: {
           colors: {
-            brand: '#00B0E4',
+            brand: '#204020',
           }
         }
       }
     }
   </script>
   <style>
-    .tab-btn.active { background: #00B0E4; color: #fff; }
+    .tab-btn.active { background: #204020; color: #fff; }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
     .copy-btn:active { transform: scale(0.95); }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fadeIn 0.3s ease forwards; }
     /* Spinner */
-    .spinner { border: 2px solid #374151; border-top-color: #00B0E4; border-radius: 50%; width: 18px; height: 18px; animation: spin 0.7s linear infinite; display: inline-block; }
+    .spinner { border: 2px solid rgba(26, 26, 26, 0.12); border-top-color: #204020; border-radius: 50%; width: 18px; height: 18px; animation: spin 0.7s linear infinite; display: inline-block; }
     @keyframes spin { to { transform: rotate(360deg); } }
     /* OS selector */
-    .os-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 14px; border-radius: 12px; border: 2px solid transparent; background: #1f2937; cursor: pointer; transition: all 0.15s; font-size: 11px; color: #9ca3af; min-width: 64px; }
-    .os-btn:hover { border-color: #374151; background: #273040; color: #d1d5db; }
-    .os-btn.selected { border-color: #00B0E4; background: #0c2233; color: #fff; }
+    .os-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 14px; border-radius: 12px; border: 2px solid transparent; background: #FFFFFF; cursor: pointer; transition: all 0.15s; font-size: 11px; color: rgba(26, 26, 26, 0.62); min-width: 64px; }
+    .os-btn:hover { border-color: rgba(26, 26, 26, 0.12); background: #FFFFFF; color: #1A1A1A; }
+    .os-btn.selected { border-color: #204020; background: #FFFFFF; color: #fff; }
     .os-btn .os-icon { font-size: 22px; line-height: 1; }
     .os-btn .os-label { font-weight: 600; font-size: 11px; }
-    .os-btn .os-ver { font-size: 9px; color: #6b7280; margin-top: -2px; }
-    .os-btn.selected .os-ver { color: #60a5fa; }
+    .os-btn .os-ver { font-size: 9px; color: rgba(26, 26, 26, 0.62); margin-top: -2px; }
+    .os-btn.selected .os-ver { color: #1e3a8a; }
   </style>
 </head>
 <body class="bg-gray-950 text-white min-h-screen">

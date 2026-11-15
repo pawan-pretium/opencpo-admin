@@ -1,12 +1,12 @@
 <!-- Step: {{ step }} -->
 <div class="setup-card" style="padding:32px;">
 
-    <div style="font-size:13px;color:#84BD00;margin-bottom:4px;">{{ step_icons[step] }} Step {{ steps.index(step) + 1 if step in steps else '' }}</div>
-    <h2 style="font-size:20px;font-weight:600;color:#e8edf2;margin-bottom:6px;">{{ step_labels[step] }}</h2>
-    <p style="font-size:13px;color:#3d5870;margin-bottom:24px;">{{ step_descriptions[step] }}</p>
+    <div style="font-size:13px;color:#204020;margin-bottom:4px;">{{ step_icons[step] }} Step {{ steps.index(step) + 1 if step in steps else '' }}</div>
+    <h2 style="font-size:20px;font-weight:600;color:#1A1A1A;margin-bottom:6px;">{{ step_labels[step] }}</h2>
+    <p style="font-size:13px;color:rgba(26, 26, 26, 0.62);margin-bottom:24px;">{{ step_descriptions[step] }}</p>
 
     {% if error %}
-    <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#f87171;">
+    <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#b91c1c;">
         {{ error }}
     </div>
     {% endif %}
@@ -29,13 +29,13 @@
         </div>
 
         {% elif step == "tailscale" %}
-        <div style="font-size:12px;color:#3d5870;margin-bottom:4px;">
+        <div style="font-size:12px;color:rgba(26, 26, 26, 0.62);margin-bottom:4px;">
             Tailscale connects your OpenCPO instance to your tailnet, enabling secure
             remote access to the admin panel and charger WebSocket ports from any
             device on your network.
         </div>
-        <div style="background:#060d19;border:1px solid #1e3452;border-radius:7px;padding:14px;">
-            <div style="font-size:13px;color:#8ba3b8;margin-bottom:10px;">Expose services on your tailnet:</div>
+        <div style="background:#FFFFFF;border:1px solid rgba(26, 26, 26, 0.12);border-radius:7px;padding:14px;">
+            <div style="font-size:13px;color:rgba(26, 26, 26, 0.62);margin-bottom:10px;">Expose services on your tailnet:</div>
             <div style="display:flex;flex-direction:column;gap:8px;">
                 <label class="checkbox-label">
                     <input type="checkbox" name="enable_admin" checked style="margin-right:8px;">
@@ -63,9 +63,9 @@
             <label for="tags">Tailscale ACL Tags (comma-separated, optional)</label>
             <input id="tags" name="tags" type="text" class="input-field" placeholder="tag:opencpo, tag:admin" value="tag:opencpo">
         </div>
-        <div style="font-size:12px;color:#3d5870;margin-top:-4px;">
+        <div style="font-size:12px;color:rgba(26, 26, 26, 0.62);margin-top:-4px;">
             Tags are applied to the machine for ACL-based access control.
-            Requires <code style="color:#6b8299;">--accept-tags</code> in your Tailscale auth key.
+            Requires <code style="color:rgba(26, 26, 26, 0.62);">--accept-tags</code> in your Tailscale auth key.
         </div>
 
         {% elif step == "org" %}
@@ -104,7 +104,7 @@
         </div>
 
         {% elif step == "branding" %}
-        <div style="font-size:12px;color:#3d5870;margin-bottom:4px;">
+        <div style="font-size:12px;color:rgba(26, 26, 26, 0.62);margin-bottom:4px;">
             Customize the platform appearance. All settings can be changed later.
         </div>
         <div>
@@ -137,7 +137,7 @@
         </div>
 
         {% elif step == "smtp" %}
-        <div style="font-size:12px;color:#3d5870;margin-bottom:4px;">Leave empty to skip — can be configured later.</div>
+        <div style="font-size:12px;color:rgba(26, 26, 26, 0.62);margin-bottom:4px;">Leave empty to skip — can be configured later.</div>
         <div>
             <label for="host">SMTP Host</label>
             <input id="host" name="host" type="text" class="input-field" placeholder="smtp.example.com">
@@ -169,7 +169,7 @@
         </div>
 
         {% elif step == "pki" %}
-        <div style="font-size:12px;color:#3d5870;margin-bottom:4px;">PKI is initialized automatically on startup. This step ensures root and user CAs exist.</div>
+        <div style="font-size:12px;color:rgba(26, 26, 26, 0.62);margin-bottom:4px;">PKI is initialized automatically on startup. This step ensures root and user CAs exist.</div>
         <div>
             <label for="org_name">Organization Name (for certificates)</label>
             <input id="org_name" name="org_name" type="text" class="input-field" value="" placeholder="My CPO">
@@ -206,7 +206,7 @@
         </div>
 
         {% elif step == "features" %}
-        <div style="font-size:12px;color:#3d5870;margin-bottom:4px;">Enable optional modules. All can be toggled later.</div>
+        <div style="font-size:12px;color:rgba(26, 26, 26, 0.62);margin-bottom:4px;">Enable optional modules. All can be toggled later.</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
             <label class="checkbox-label">
                 <input type="checkbox" name="ocpi" style="margin-right:8px;"> OCPI Roaming — connect to other charging networks

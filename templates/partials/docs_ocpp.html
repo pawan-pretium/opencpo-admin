@@ -16,85 +16,85 @@
   <div class="docs-diagram-label">OCPP Architecture — Message Flow</div>
   <svg viewBox="0 0 860 320" style="width:100%;display:block;max-width:860px;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2d5a8a"/></marker>
-      <marker id="arr-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#84BD00"/></marker>
+      <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="rgba(26, 26, 26, 0.35)"/></marker>
+      <marker id="arr-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#204020"/></marker>
     </defs>
     <!-- Chargers column -->
-    <rect x="10" y="40"  width="130" height="52" rx="8" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="75" y="60"  text-anchor="middle" font-size="9" fill="#4a7fa8" font-family="monospace" font-weight="700">CHARGER A</text>
-    <text x="75" y="76"  text-anchor="middle" font-size="8" fill="#3d5870">OCPP 1.6j</text>
-    <text x="75" y="88"  text-anchor="middle" font-size="8" fill="#84BD00">ws://:9100/{id}</text>
+    <rect x="10" y="40"  width="130" height="52" rx="8" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="75" y="60"  text-anchor="middle" font-size="9" fill="rgba(26, 26, 26, 0.62)" font-family="monospace" font-weight="700">CHARGER A</text>
+    <text x="75" y="76"  text-anchor="middle" font-size="8" fill="rgba(26, 26, 26, 0.62)">OCPP 1.6j</text>
+    <text x="75" y="88"  text-anchor="middle" font-size="8" fill="#204020">ws://:9100/{id}</text>
 
-    <rect x="10" y="110" width="130" height="52" rx="8" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="75" y="130" text-anchor="middle" font-size="9" fill="#4a7fa8" font-family="monospace" font-weight="700">CHARGER B</text>
-    <text x="75" y="146" text-anchor="middle" font-size="8" fill="#3d5870">OCPP 1.6j</text>
-    <text x="75" y="158" text-anchor="middle" font-size="8" fill="#84BD00">ws://:9100/{id}</text>
+    <rect x="10" y="110" width="130" height="52" rx="8" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="75" y="130" text-anchor="middle" font-size="9" fill="rgba(26, 26, 26, 0.62)" font-family="monospace" font-weight="700">CHARGER B</text>
+    <text x="75" y="146" text-anchor="middle" font-size="8" fill="rgba(26, 26, 26, 0.62)">OCPP 1.6j</text>
+    <text x="75" y="158" text-anchor="middle" font-size="8" fill="#204020">ws://:9100/{id}</text>
 
-    <rect x="10" y="200" width="130" height="52" rx="8" fill="#0d2137" stroke="#15304a"/>
-    <text x="75" y="220" text-anchor="middle" font-size="9" fill="#4a7fa8" font-family="monospace" font-weight="700">CHARGER C</text>
-    <text x="75" y="236" text-anchor="middle" font-size="8" fill="#3d5870">OCPP 2.0.1</text>
-    <text x="75" y="248" text-anchor="middle" font-size="8" fill="#00B0E4">ws://:9201/{id}</text>
+    <rect x="10" y="200" width="130" height="52" rx="8" fill="#FFFFFF" stroke="#15304a"/>
+    <text x="75" y="220" text-anchor="middle" font-size="9" fill="rgba(26, 26, 26, 0.62)" font-family="monospace" font-weight="700">CHARGER C</text>
+    <text x="75" y="236" text-anchor="middle" font-size="8" fill="rgba(26, 26, 26, 0.62)">OCPP 2.0.1</text>
+    <text x="75" y="248" text-anchor="middle" font-size="8" fill="#204020">ws://:9201/{id}</text>
 
     <!-- WebSocket label -->
-    <text x="170" y="145" text-anchor="middle" font-size="8" fill="#3d5870" font-family="monospace">WebSocket</text>
-    <text x="170" y="155" text-anchor="middle" font-size="8" fill="#3d5870" font-family="monospace">(persistent)</text>
+    <text x="170" y="145" text-anchor="middle" font-size="8" fill="rgba(26, 26, 26, 0.62)" font-family="monospace">WebSocket</text>
+    <text x="170" y="155" text-anchor="middle" font-size="8" fill="rgba(26, 26, 26, 0.62)" font-family="monospace">(persistent)</text>
 
     <!-- Arrows charger → core -->
-    <line x1="141" y1="66"  x2="248" y2="66"  stroke="#1a3a5c" stroke-width="1.5" marker-end="url(#arr)"/>
-    <line x1="141" y1="136" x2="248" y2="136" stroke="#1a3a5c" stroke-width="1.5" marker-end="url(#arr)"/>
-    <line x1="141" y1="226" x2="248" y2="195" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+    <line x1="141" y1="66"  x2="248" y2="66"  stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="141" y1="136" x2="248" y2="136" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="141" y1="226" x2="248" y2="195" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
 
     <!-- OCPP Core -->
-    <rect x="250" y="40" width="160" height="220" rx="10" fill="#071828" stroke="#00B0E4" stroke-opacity="0.4"/>
-    <text x="330" y="62"  text-anchor="middle" font-size="9" fill="#00B0E4" font-family="monospace" font-weight="700">OCPP CORE</text>
-    <rect x="264" y="74"  width="132" height="24" rx="4" fill="#0a1e30" stroke="#1a3a5c"/>
-    <text x="330" y="89"  text-anchor="middle" font-size="8" fill="#84BD00">1.6j Handler :9100</text>
-    <rect x="264" y="104" width="132" height="24" rx="4" fill="#0a1e30" stroke="#1a3a5c"/>
-    <text x="330" y="119" text-anchor="middle" font-size="8" fill="#00B0E4">2.0.1 Handler :9201</text>
-    <rect x="264" y="136" width="132" height="24" rx="4" fill="#0a1e30" stroke="#1a3a5c"/>
-    <text x="330" y="151" text-anchor="middle" font-size="8" fill="#c0cdd8">Auth / Tokens</text>
-    <rect x="264" y="166" width="132" height="24" rx="4" fill="#0a1e30" stroke="#1a3a5c"/>
-    <text x="330" y="181" text-anchor="middle" font-size="8" fill="#c0cdd8">Session Engine</text>
-    <rect x="264" y="196" width="132" height="24" rx="4" fill="#0a1e30" stroke="#1a3a5c"/>
-    <text x="330" y="211" text-anchor="middle" font-size="8" fill="#c0cdd8">Tariff / Billing</text>
-    <text x="330" y="246" text-anchor="middle" font-size="7" fill="#3d5870">PostgreSQL + Redis</text>
+    <rect x="250" y="40" width="160" height="220" rx="10" fill="#FFFFFF" stroke="#204020" stroke-opacity="0.4"/>
+    <text x="330" y="62"  text-anchor="middle" font-size="9" fill="#204020" font-family="monospace" font-weight="700">OCPP CORE</text>
+    <rect x="264" y="74"  width="132" height="24" rx="4" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="330" y="89"  text-anchor="middle" font-size="8" fill="#204020">1.6j Handler :9100</text>
+    <rect x="264" y="104" width="132" height="24" rx="4" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="330" y="119" text-anchor="middle" font-size="8" fill="#204020">2.0.1 Handler :9201</text>
+    <rect x="264" y="136" width="132" height="24" rx="4" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="330" y="151" text-anchor="middle" font-size="8" fill="#1A1A1A">Auth / Tokens</text>
+    <rect x="264" y="166" width="132" height="24" rx="4" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="330" y="181" text-anchor="middle" font-size="8" fill="#1A1A1A">Session Engine</text>
+    <rect x="264" y="196" width="132" height="24" rx="4" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="330" y="211" text-anchor="middle" font-size="8" fill="#1A1A1A">Tariff / Billing</text>
+    <text x="330" y="246" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">PostgreSQL + Redis</text>
 
     <!-- Core → Event Bus -->
-    <line x1="411" y1="150" x2="468" y2="150" stroke="#2d5a8a" stroke-width="1.5" marker-end="url(#arr)"/>
-    <text x="440" y="143" text-anchor="middle" font-size="7" fill="#3d5870">events</text>
+    <line x1="411" y1="150" x2="468" y2="150" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#arr)"/>
+    <text x="440" y="143" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">events</text>
 
     <!-- Event Bus -->
-    <rect x="470" y="100" width="120" height="100" rx="8" fill="#0a1628" stroke="#1a3a5c"/>
-    <text x="530" y="122" text-anchor="middle" font-size="9" fill="#c0cdd8" font-family="monospace" font-weight="700">EVENT BUS</text>
-    <text x="530" y="138" text-anchor="middle" font-size="8" fill="#3d5870">Redis Pub/Sub</text>
-    <text x="530" y="158" text-anchor="middle" font-size="7" fill="#2d4a63">session.started</text>
-    <text x="530" y="170" text-anchor="middle" font-size="7" fill="#2d4a63">session.stopped</text>
-    <text x="530" y="182" text-anchor="middle" font-size="7" fill="#2d4a63">charger.status</text>
+    <rect x="470" y="100" width="120" height="100" rx="8" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="530" y="122" text-anchor="middle" font-size="9" fill="#1A1A1A" font-family="monospace" font-weight="700">EVENT BUS</text>
+    <text x="530" y="138" text-anchor="middle" font-size="8" fill="rgba(26, 26, 26, 0.62)">Redis Pub/Sub</text>
+    <text x="530" y="158" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">session.started</text>
+    <text x="530" y="170" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">session.stopped</text>
+    <text x="530" y="182" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">charger.status</text>
 
     <!-- Event Bus → Consumers -->
-    <line x1="591" y1="125" x2="648" y2="88"  stroke="#2d5a8a" stroke-width="1.5" marker-end="url(#arr)"/>
-    <line x1="591" y1="150" x2="648" y2="155" stroke="#2d5a8a" stroke-width="1.5" marker-end="url(#arr)"/>
-    <line x1="591" y1="175" x2="648" y2="218" stroke="#2d5a8a" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="591" y1="125" x2="648" y2="88"  stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="591" y1="150" x2="648" y2="155" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="591" y1="175" x2="648" y2="218" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1.5" marker-end="url(#arr)"/>
 
     <!-- Consumers -->
-    <rect x="650" y="56"  width="100" height="40" rx="6" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="700" y="72"  text-anchor="middle" font-size="8" fill="#84BD00" font-weight="600">Admin Panel</text>
-    <text x="700" y="84"  text-anchor="middle" font-size="7" fill="#3d5870">live dashboard</text>
+    <rect x="650" y="56"  width="100" height="40" rx="6" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="700" y="72"  text-anchor="middle" font-size="8" fill="#204020" font-weight="600">Admin Panel</text>
+    <text x="700" y="84"  text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">live dashboard</text>
 
-    <rect x="650" y="132" width="100" height="40" rx="6" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="700" y="148" text-anchor="middle" font-size="8" fill="#00B0E4" font-weight="600">Charge App</text>
-    <text x="700" y="160" text-anchor="middle" font-size="7" fill="#3d5870">driver sessions</text>
+    <rect x="650" y="132" width="100" height="40" rx="6" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="700" y="148" text-anchor="middle" font-size="8" fill="#204020" font-weight="600">Charge App</text>
+    <text x="700" y="160" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">driver sessions</text>
 
-    <rect x="650" y="198" width="100" height="40" rx="6" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="700" y="214" text-anchor="middle" font-size="8" fill="#c0cdd8" font-weight="600">EMS</text>
-    <text x="700" y="226" text-anchor="middle" font-size="7" fill="#3d5870">smart charging</text>
+    <rect x="650" y="198" width="100" height="40" rx="6" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="700" y="214" text-anchor="middle" font-size="8" fill="#1A1A1A" font-weight="600">EMS</text>
+    <text x="700" y="226" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">smart charging</text>
 
     <!-- REST API arrow -->
-    <line x1="411" y1="240" x2="760" y2="240" stroke="#1a3a5c" stroke-width="1" stroke-dasharray="3,4"/>
-    <rect x="762" y="224" width="88" height="32" rx="6" fill="#0d2137" stroke="#1a3a5c"/>
-    <text x="806" y="236" text-anchor="middle" font-size="8" fill="#84BD00" font-weight="600">REST API</text>
-    <text x="806" y="248" text-anchor="middle" font-size="7" fill="#3d5870">Management</text>
-    <text x="580" y="255" text-anchor="middle" font-size="7" fill="#3d5870">REST (management, not real-time)</text>
+    <line x1="411" y1="240" x2="760" y2="240" stroke="rgba(26, 26, 26, 0.35)" stroke-width="1" stroke-dasharray="3,4"/>
+    <rect x="762" y="224" width="88" height="32" rx="6" fill="#FFFFFF" stroke="rgba(26, 26, 26, 0.35)"/>
+    <text x="806" y="236" text-anchor="middle" font-size="8" fill="#204020" font-weight="600">REST API</text>
+    <text x="806" y="248" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">Management</text>
+    <text x="580" y="255" text-anchor="middle" font-size="7" fill="rgba(26, 26, 26, 0.62)">REST (management, not real-time)</text>
   </svg>
 </div>
 
@@ -212,7 +212,7 @@ wss://your-server:9201/{charger_id}   <span class="docs-c-comment"># with TLS (m
 
 <!-- OCPP Messages page -->
 <div class="docs-callout">
-  <strong>Live Protocol Viewer</strong> — Admin → <a href="/ocpp" style="color:#00B0E4;">OCPP Messages</a> shows every CALL and CALL_RESULT in real time. Invaluable for debugging charger behaviour. Filter by charger ID, message type, or time range.
+  <strong>Live Protocol Viewer</strong> — Admin → <a href="/ocpp" style="color:#204020;">OCPP Messages</a> shows every CALL and CALL_RESULT in real time. Invaluable for debugging charger behaviour. Filter by charger ID, message type, or time range.
 </div>
 
 </div>
