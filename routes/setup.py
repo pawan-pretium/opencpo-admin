@@ -164,8 +164,8 @@ async def setup_step(request: Request, step_name: str):
     elif step_name == "org":
         payload = {
             "name": form.get("name", "My CPO"),
-            "timezone": form.get("timezone", "Europe/Amsterdam"),
-            "currency": form.get("currency", "EUR"),
+            "timezone": form.get("timezone", "Europe/London"),
+            "currency": form.get("currency", "GBP"),
             "public_url": form.get("public_url", "http://localhost"),
         }
     elif step_name == "branding":
@@ -192,7 +192,7 @@ async def setup_step(request: Request, step_name: str):
     elif step_name == "pricing":
         payload = {
             "currency": form.get("currency", "EUR"),
-            "default_rate_kwh": float(form.get("default_rate_kwh", 0.35)),
+            "default_rate_kwh": float(form.get("default_rate_kwh", 0.50)),
             "tariff_name": form.get("tariff_name", "Standard Rate"),
         }
     elif step_name == "features":

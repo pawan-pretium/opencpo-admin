@@ -38,8 +38,8 @@
                 {% if s.driver_phone %}<div class="text-gray-400 text-xs font-mono">{{ s.driver_phone }}</div>{% endif %}
             </td>
             <td class="p-3 text-right text-white font-mono">{{ "%.2f"|format(s.kwh or s.energy_kwh or 0) }}</td>
-            <td class="p-3 text-right text-gray-400 font-mono text-xs">€{{ "%.4f"|format(s.rate_kwh or 0) }}</td>
-            <td class="p-3 text-right text-brand-green font-semibold font-mono">€{{ "%.2f"|format(s.cost_incl or 0) }}</td>
+            <td class="p-3 text-right text-gray-400 font-mono text-xs">£{{ "%.4f"|format(s.rate_kwh or 0) }}</td>
+            <td class="p-3 text-right text-brand-green font-semibold font-mono">£{{ "%.2f"|format(s.cost_incl or 0) }}</td>
             <td class="p-3 text-center">
                 <a href="/receipts/{{ s.id }}/download" class="text-brand-blue hover:underline text-xs" title="Download PDF">📥 PDF</a>
             </td>

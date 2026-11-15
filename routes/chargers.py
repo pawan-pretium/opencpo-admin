@@ -163,7 +163,7 @@ async def action_charger_assign_tariff(request: Request, cp_id: str):
             energy_rate = t["energy_rate"] if t else None
 
         await api(f"/chargers/{cp_id}", method="PUT", json={"tariff_kwh": energy_rate})
-        rate_str = f"€{energy_rate:.4f}" if energy_rate else "none"
+        rate_str = f"£{energy_rate:.4f}" if energy_rate is not None else "none"
         return HTMLResponse(f'''
             <td class="p-3" colspan="1">
                 <span class="text-green-400 text-xs">✓ Tariff updated ({rate_str})</span>

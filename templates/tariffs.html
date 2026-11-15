@@ -16,10 +16,10 @@
 
 <!-- Pricing field legend -->
 <div class="mb-5 p-4 bg-gray-900 border border-gray-800 rounded-xl text-xs text-gray-400 grid grid-cols-2 md:grid-cols-4 gap-3">
-    <div><span class="text-gray-200 font-semibold block mb-0.5">Energy Rate (€/kWh)</span>The main charge — drivers pay this per kilowatt-hour of electricity delivered. Most tariffs only need this.</div>
-    <div><span class="text-gray-200 font-semibold block mb-0.5">Time Rate (€/min)</span>Optional per-minute fee while charging. Useful for busy locations where you want to encourage faster turnover.</div>
-    <div><span class="text-gray-200 font-semibold block mb-0.5">Idle Rate (€/min)</span>Fee that kicks in after charging is complete but the car is still plugged in. Encourages drivers to free up the charger promptly.</div>
-    <div><span class="text-gray-200 font-semibold block mb-0.5">Flat Fee (€)</span>A fixed connection fee charged once per session, regardless of energy or time. Can be used to cover infrastructure costs.</div>
+    <div><span class="text-gray-200 font-semibold block mb-0.5">Energy Rate (£/kWh)</span>The main charge — drivers pay this per kilowatt-hour of electricity delivered. Most tariffs only need this.</div>
+    <div><span class="text-gray-200 font-semibold block mb-0.5">Time Rate (£/min)</span>Optional per-minute fee while charging. Useful for busy locations where you want to encourage faster turnover.</div>
+    <div><span class="text-gray-200 font-semibold block mb-0.5">Idle Rate (£/min)</span>Fee that kicks in after charging is complete but the car is still plugged in. Encourages drivers to free up the charger promptly.</div>
+    <div><span class="text-gray-200 font-semibold block mb-0.5">Flat Fee (£)</span>A fixed connection fee charged once per session, regardless of energy or time. Can be used to cover infrastructure costs.</div>
 </div>
 <!-- ── Section 1: Tariff Cards ───────────────────────────────────────── -->
 <div id="tariff-cards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
@@ -48,23 +48,23 @@
         {{ status_badge | safe }}
     </div>
     <div class="text-3xl font-bold text-brand-green mb-1">
-        €{{ "%.4f"|format(t.energy_rate or 0)|replace(".", ",") }}
+        £{{ "%.4f"|format(t.energy_rate or 0) }}
         <span class="text-sm text-gray-400 font-normal">/kWh</span>
     </div>
     <div class="grid grid-cols-3 gap-2 mt-3 text-xs text-gray-400">
         <div class="bg-gray-800 rounded p-2 text-center">
             <div class="text-gray-500 mb-0.5">Time</div>
-            <div class="font-mono text-gray-200">€{{ "%.4f"|format(t.time_rate or 0)|replace(".", ",") }}</div>
+            <div class="font-mono text-gray-200">£{{ "%.4f"|format(t.time_rate or 0) }}</div>
             <div class="text-gray-600">/min</div>
         </div>
         <div class="bg-gray-800 rounded p-2 text-center">
             <div class="text-gray-500 mb-0.5">Idle</div>
-            <div class="font-mono text-gray-200">€{{ "%.4f"|format(t.idle_rate or 0)|replace(".", ",") }}</div>
+            <div class="font-mono text-gray-200">£{{ "%.4f"|format(t.idle_rate or 0) }}</div>
             <div class="text-gray-600">/min</div>
         </div>
         <div class="bg-gray-800 rounded p-2 text-center">
             <div class="text-gray-500 mb-0.5">Start</div>
-            <div class="font-mono text-gray-200">€{{ "%.2f"|format(t.flat_fee or 0)|replace(".", ",") }}</div>
+            <div class="font-mono text-gray-200">£{{ "%.2f"|format(t.flat_fee or 0) }}</div>
             <div class="text-gray-600">flat</div>
         </div>
     </div>
@@ -98,11 +98,11 @@
                         class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm">
                         {% for t in tariffs %}
                         <option value="{{ t.energy_rate }}" data-time="{{ t.time_rate }}" data-idle="{{ t.idle_rate }}" data-flat="{{ t.flat_fee }}">
-                            {{ t.name }} (€{{ "%.4f"|format(t.energy_rate or 0)|replace(".", ",") }}/kWh)
+                            {{ t.name }} (£{{ "%.4f"|format(t.energy_rate or 0) }}/kWh)
                         </option>
                         {% endfor %}
                         {% if not tariffs %}
-                        <option value="0.35" data-time="0" data-idle="0" data-flat="0">Example €0.35/kWh</option>
+                        <option value="0.50" data-time="0" data-idle="0" data-flat="0">Example £0.50/kWh</option>
                         {% endif %}
                     </select>
                 </div>
@@ -157,23 +157,23 @@
                 <div class="space-y-3 text-sm">
                     <div class="flex justify-between">
                         <span class="text-gray-400">Energy Cost</span>
-                        <span id="result-energy" class="font-mono text-gray-100">€0,00</span>
+                        <span id="result-energy" class="font-mono text-gray-100">£0,00</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-400">Time Rate</span>
-                        <span id="result-time" class="font-mono text-gray-100">€0,00</span>
+                        <span id="result-time" class="font-mono text-gray-100">£0,00</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-400">Idle Rate</span>
-                        <span id="result-idle" class="font-mono text-gray-100">€0,00</span>
+                        <span id="result-idle" class="font-mono text-gray-100">£0,00</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-gray-400">Flat Fee</span>
-                        <span id="result-flat" class="font-mono text-gray-100">€0,00</span>
+                        <span id="result-flat" class="font-mono text-gray-100">£0,00</span>
                     </div>
                     <div class="flex justify-between pt-3 border-t border-gray-700">
                         <span class="font-bold text-gray-200">Total</span>
-                        <span id="result-total" class="font-mono font-bold text-brand-green text-lg">€0,00</span>
+                        <span id="result-total" class="font-mono font-bold text-brand-green text-lg">£0,00</span>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 border-t border-gray-700 text-xs text-gray-500" id="calc-details"></div>
@@ -188,7 +188,7 @@
     <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label class="block text-xs text-gray-400 mb-1">Purchase Price Energy (€/kWh)</label>
+                <label class="block text-xs text-gray-400 mb-1">Purchase Price Energy (£/kWh)</label>
                 <input type="number" id="inkoop-prijs" value="0.12" min="0" step="0.01" oninput="margeUpdate()"
                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono mb-4">
                 <label class="block text-xs text-gray-400 mb-1">Compare with Tariff</label>
@@ -200,7 +200,7 @@
                     </option>
                     {% endfor %}
                     {% if not tariffs %}
-                    <option value="0.35" data-name="Example">Example €0.35</option>
+                    <option value="0.50" data-name="Example">Example £0.50</option>
                     {% endif %}
                 </select>
             </div>
@@ -241,7 +241,7 @@
                 <tr class="border-b border-gray-800 text-gray-500 text-xs tracking-widest uppercase">
                     <th class="p-3 text-left">Charger</th>
                     <th class="p-3 text-left">Status</th>
-                    <th class="p-3 text-left">Current Tariff (€/kWh)</th>
+                    <th class="p-3 text-left">Current Tariff (£/kWh)</th>
                     <th class="p-3 text-left">Assign</th>
                 </tr>
             </thead>
@@ -257,7 +257,7 @@
                     {% endif %}
                 </td>
                 <td class="p-3 font-mono text-gray-300">
-                    {% if c.tariff_kwh %}€{{ "%.4f"|format(c.tariff_kwh)|replace(".", ",") }}{% else %}<span class="text-gray-600">—</span>{% endif %}
+                    {% if c.tariff_kwh %}£{{ "%.4f"|format(c.tariff_kwh) }}{% else %}<span class="text-gray-600">—</span>{% endif %}
                 </td>
                 <td class="p-3">
                     <form hx-post="/action/charger/assign-tariff/{{ c.id }}"
@@ -268,7 +268,7 @@
                             <option value="">— none —</option>
                             {% for t in tariffs %}
                             <option value="{{ t.id }}" {% if c.tariff_kwh and t.energy_rate == c.tariff_kwh %}selected{% endif %}>
-                                {{ t.name }} (€{{ "%.4f"|format(t.energy_rate or 0)|replace(".", ",") }})
+                                {{ t.name }} (£{{ "%.4f"|format(t.energy_rate or 0) }})
                             </option>
                             {% endfor %}
                         </select>
@@ -313,22 +313,22 @@
                             class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono text-gray-400">
                     </div>
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1">Energy Rate (€/kWh)</label>
-                        <input name="energy_rate" type="number" step="0.0001" min="0" value="0.35" required
+                        <label class="block text-xs text-gray-400 mb-1">Energy Rate (£/kWh)</label>
+                        <input name="energy_rate" type="number" step="0.0001" min="0" value="0.50" required
                             class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
                     </div>
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1">Time Rate (€/min)</label>
+                        <label class="block text-xs text-gray-400 mb-1">Time Rate (£/min)</label>
                         <input name="time_rate" type="number" step="0.0001" min="0" value="0"
                             class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
                     </div>
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1">Idle Rate (€/min)</label>
+                        <label class="block text-xs text-gray-400 mb-1">Idle Rate (£/min)</label>
                         <input name="idle_rate" type="number" step="0.0001" min="0" value="0"
                             class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
                     </div>
                     <div>
-                        <label class="block text-xs text-gray-400 mb-1">Flat Fee (€)</label>
+                        <label class="block text-xs text-gray-400 mb-1">Flat Fee (£)</label>
                         <input name="flat_fee" type="number" step="0.01" min="0" value="0"
                             class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
                     </div>
@@ -419,7 +419,7 @@ function setPresetKwh(kwh) {
 }
 
 function fmtEur(val) {
-    return '€' + val.toFixed(2).replace('.', ',');
+    return '£' + val.toFixed(2);
 }
 
 function calcUpdate() {
@@ -455,7 +455,7 @@ function calcUpdate() {
     if (calcMode === 'time') {
         details = `${minutes} min × ${document.getElementById('calc-power').value} kW = ${kwh.toFixed(2)} kWh`;
     } else {
-        details = `${kwh} kWh × €${energyRate.toFixed(4).replace('.',',')} /kWh`;
+        details = `${kwh} kWh × £${energyRate.toFixed(4)} /kWh`;
     }
     document.getElementById('calc-details').textContent = details;
 }

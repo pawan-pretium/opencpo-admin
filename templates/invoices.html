@@ -80,13 +80,13 @@
         {{ (inv.period_start or '')[:7] }} – {{ (inv.period_end or '')[:7] }}
       </td>
       <td class="p-4 text-right font-mono text-gray-300" style="font-family:'SF Mono',Monaco,monospace">
-        € {{ '%.2f'|format(inv.subtotal or 0) | replace('.', ',') | replace(',', '.', 1) | replace('.', ',') }}
+        £ {{ '%.2f'|format(inv.subtotal or 0)  }}
       </td>
       <td class="p-4 text-right font-mono text-gray-400" style="font-family:'SF Mono',Monaco,monospace">
-        € {{ '%.2f'|format(inv.vat_amount or 0) | replace('.', ',') | replace(',', '.', 1) | replace('.', ',') }}
+        £ {{ '%.2f'|format(inv.vat_amount or 0)  }}
       </td>
       <td class="p-4 text-right font-mono text-gray-100 font-semibold" style="font-family:'SF Mono',Monaco,monospace">
-        € {{ '%.2f'|format(inv.total or 0) | replace('.', ',') | replace(',', '.', 1) | replace('.', ',') }}
+        £ {{ '%.2f'|format(inv.total or 0)  }}
       </td>
       <td class="p-4">
         {% if status == 'draft' %}

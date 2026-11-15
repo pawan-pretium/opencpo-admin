@@ -64,22 +64,22 @@ async def tariff_edit_partial(request: Request, tariff_id: str):
                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm">
             </div>
             <div>
-                <label class="block text-xs text-gray-400 mb-1">Energy Rate (€/kWh)</label>
+                <label class="block text-xs text-gray-400 mb-1">Energy Rate (£/kWh)</label>
                 <input name="energy_rate" type="number" step="0.0001" min="0" value="{t.get("energy_rate") or 0}" required
                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
             </div>
             <div>
-                <label class="block text-xs text-gray-400 mb-1">Time Rate (€/min)</label>
+                <label class="block text-xs text-gray-400 mb-1">Time Rate (£/min)</label>
                 <input name="time_rate" type="number" step="0.0001" min="0" value="{t.get("time_rate") or 0}"
                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
             </div>
             <div>
-                <label class="block text-xs text-gray-400 mb-1">Idle Rate (€/min)</label>
+                <label class="block text-xs text-gray-400 mb-1">Idle Rate (£/min)</label>
                 <input name="idle_rate" type="number" step="0.0001" min="0" value="{t.get("idle_rate") or 0}"
                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
             </div>
             <div>
-                <label class="block text-xs text-gray-400 mb-1">Start Fee (€)</label>
+                <label class="block text-xs text-gray-400 mb-1">Start Fee (£)</label>
                 <input name="flat_fee" type="number" step="0.01" min="0" value="{t.get("flat_fee") or 0}"
                     class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm font-mono">
             </div>
@@ -126,7 +126,7 @@ async def action_tariff_create(request: Request):
     body = {
         "id": tariff_id,
         "name": form.get("name", "").strip(),
-        "currency": "EUR",
+        "currency": "GBP",
         "energy_rate": float(form.get("energy_rate") or 0),
         "time_rate": float(form.get("time_rate") or 0),
         "idle_rate": float(form.get("idle_rate") or 0),
