@@ -26,6 +26,7 @@ from routes.tokens import router as tokens_router
 from routes.groups import router as groups_router
 from routes.drivers import router as drivers_router
 from routes.receipts import router as receipts_router
+from routes.invoices import router as invoices_router
 from routes.pki import router as pki_router
 from routes.security import router as security_router
 from routes.onboarding import router as onboarding_router
@@ -104,6 +105,7 @@ app.include_router(tokens_router)
 app.include_router(groups_router)
 app.include_router(drivers_router)
 app.include_router(receipts_router)
+app.include_router(invoices_router)
 app.include_router(pki_router)
 app.include_router(security_router)
 app.include_router(onboarding_router)

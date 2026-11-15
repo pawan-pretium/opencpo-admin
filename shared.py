@@ -31,6 +31,20 @@ CORE_API_PUBLIC_URL = os.getenv("CORE_API_PUBLIC_URL", "http://localhost:8000")
 
 # Templates (shared instance)
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
+
+
+def uk_phone(raw) -> str:
+    """Show a UK mobile as +44 7700 900 123. Other numbers stay as stored."""
+    digits = "".join(ch for ch in str(raw or "") if ch.isdigit())
+    if digits.startswith("0") and len(digits) == 11:
+        digits = "44" + digits[1:]
+    if digits.startswith("44") and len(digits) == 12:
+        rest = digits[2:]
+        return f"+44 {rest[:4]} {rest[4:7]} {rest[7:]}"
+    return str(raw or "").strip()
+
+
+templates.env.filters["uk_phone"] = uk_phone
 templates.env.globals["app_title"] = APP_TITLE
 templates.env.globals["charge_app_url"] = CHARGE_APP_URL
 templates.env.globals["charger_farm_url"] = CHARGER_FARM_URL

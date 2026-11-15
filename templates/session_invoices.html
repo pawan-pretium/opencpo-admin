@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Invoices{% endblock %}
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <h1 class="text-2xl font-bold">Invoices</h1>
+        <p class="text-sm text-gray-500 mt-1">Every CPO tax invoice. Lago keeps the same figures. A mismatch is shown here and the CPO figure is the one that stands.</p>
+    </div>
+    <span class="text-gray-400 text-sm">{{ invoices|length }} of {{ total }}</span>
+</div>
+
+<div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+<table class="w-full text-sm">
+    <thead class="bg-gray-800/50">
+        <tr>
+            <th class="text-left p-3 text-gray-400 font-medium">Invoice</th>
+            <th class="text-left p-3 text-gray-400 font-medium">Date</th>
+            <th class="text-left p-3 text-gray-400 font-medium">Charger</th>
+            <th class="text-left p-3 text-gray-400 font-medium">Driver</th>
+            <th class="text-right p-3 text-gray-400 font-medium">Total</th>
+            <th class="text-left p-3 text-gray-400 font-medium">Paid</th>
+            <th class="text-left p-3 text-gray-400 font-medium">Lago</th>
+            <th class="text-center p-3 text-gray-400 font-medium"></th>
+        </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-800">
+        {% for inv in invoices %}
+        <tr class="hover:bg-gray-800/30">
+            <td class="p-3 text-white font-mono">{{ inv.invoice_number or '—' }}</td>
+            <td class="p-3 text-gray-300">{{ inv.created_at[:10] if inv.created_at else '—' }}</td>
+            <td class="p-3 text-white">{{ inv.charge_point or '—' }}</td>
+            <td class="p-3 text-gray-300">{{ inv.driver_email or '—' }}</td>
+            <td class="p-3 text-right text-white font-mono">£{{ '%.2f'|format(inv.total or 0) }}</td>
+            <td class="p-3">{{ 'Paid' if inv.paid else 'Unpaid' }}</td>
+            <td class="p-3 text-xs text-amber-300">{{ inv.lago_mismatch or 'Matches' }}</td>
+            <td class="p-3 text-center">
+                <a href="/invoices/{{ inv.session_id }}/pdf" class="text-brand-blue hover:underline text-xs">PDF</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr><td class="p-6 text-gray-500" colspan="8">No invoices yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

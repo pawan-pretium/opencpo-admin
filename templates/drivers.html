@@ -53,7 +53,7 @@
                 <!-- Phone -->
                 <td class="p-3">
                     {% if account.phone %}
-                    <span class="text-gray-400 text-sm font-mono">{{ account.phone }}</span>
+                    <span class="text-gray-400 text-sm font-mono">{{ account.phone | uk_phone }}</span>
                     {% else %}
                     <span class="text-gray-600 text-sm">—</span>
                     {% endif %}

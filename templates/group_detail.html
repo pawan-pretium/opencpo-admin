@@ -31,7 +31,7 @@
       <div><div class="text-xs text-gray-500">Contact</div><div class="text-gray-200">{{ group.contact_name }}</div></div>
       {% endif %}
       {% if group.contact_phone %}
-      <div><div class="text-xs text-gray-500">Phone</div><div class="text-gray-200">{{ group.contact_phone }}</div></div>
+      <div><div class="text-xs text-gray-500">Phone</div><div class="text-gray-200">{{ group.contact_phone | uk_phone }}</div></div>
       {% endif %}
       {% if group.notes %}
       <div><div class="text-xs text-gray-500">Notes</div><div class="text-gray-400 text-xs">{{ group.notes }}</div></div>
